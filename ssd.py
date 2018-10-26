@@ -288,3 +288,4 @@ def SSD300(input_shape, num_classes=21):
                                name='predictions')
     model = Model(net['input'], net['predictions'])
     return model
+#updated by sumit

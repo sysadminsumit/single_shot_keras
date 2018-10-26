@@ -162,7 +162,7 @@ class PriorBox(Layer):
         prior_boxes = prior_boxes.reshape(-1, 4)
         if self.clip:
             prior_boxes = np.minimum(np.maximum(prior_boxes, 0.0), 1.0)
-        # define variances
+        # define  new variances
         num_boxes = len(prior_boxes)
         if len(self.variances) == 1:
             variances = np.ones((num_boxes, 4)) * self.variances[0]
@@ -179,3 +179,4 @@ class PriorBox(Layer):
             #TODO
             pass
         return prior_boxes_tensor
+# updatd by sumit

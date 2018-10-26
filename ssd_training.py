@@ -1,7 +1,7 @@
 """SSD training utils."""
 
 import tensorflow as tf
-
+import numpy as np
 
 class MultiboxLoss(object):
     """Multibox loss with some helper functions.

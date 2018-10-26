@@ -2,7 +2,8 @@
 
 import numpy as np
 import tensorflow as tf
-
+import os
+import pandas
 
 class BBoxUtility(object):
     """Utility class to do some stuff with bounding boxes and priors.
@@ -57,15 +58,7 @@ class BBoxUtility(object):
                                                 iou_threshold=self._nms_thresh)
 
     def iou(self, box):
-        """Compute intersection over union for the box with all priors.
-
-        # Arguments
-            box: Box, numpy tensor of shape (4,).
-
-        # Return
-            iou: Intersection over union,
-                numpy tensor of shape (num_priors).
-        """
+       
         # compute intersection
         inter_upleft = np.maximum(self.priors[:, :2], box[:2])
         inter_botright = np.minimum(self.priors[:, 2:4], box[2:])

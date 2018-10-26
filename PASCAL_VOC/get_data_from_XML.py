@@ -1,7 +1,7 @@
 import numpy as np
-import os
+import pandas
 from xml.etree import ElementTree
-
+import os
 class XML_preprocessor(object):
 
     def __init__(self, data_path):
